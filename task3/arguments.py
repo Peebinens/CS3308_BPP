@@ -27,7 +27,7 @@ def get_args():
         cfg = OmegaConf.load(args.config)
     except FileNotFoundError:
         print("No configuration file found")
-    
+    cfg.env.container_size = [100, 100, 100]
     box_small = int(max(cfg.env.container_size) / 10)
     box_big = int(max(cfg.env.container_size) / 2)
     # box_range = (5, 5, 5, 25, 25, 25)

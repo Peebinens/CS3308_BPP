@@ -4,7 +4,6 @@ from .container import Container
 import numpy as np
 import gymnasium as gym
 from gymnasium import spaces
-from .cutCreator import CuttingBoxCreator
 # from .mdCreator import MDlayerBoxCreator
 from .binCreator import RandomBoxCreator, LoadBoxCreator, BoxCreator, LoadOrderCreator
 

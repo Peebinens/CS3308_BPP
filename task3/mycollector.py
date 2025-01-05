@@ -197,7 +197,7 @@ class PackCollector(Collector):
                 done=done,
                 info=info
             )
-            print(self.data)
+            # print(self.data)
             if self.preprocess_fn:
                 self.data.update(
                     self.preprocess_fn(

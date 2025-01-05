@@ -114,7 +114,7 @@ class VTKRender:
 
         self.interactor.Initialize()
         self.render_window.Render()
-        time.sleep(0.3)
+        time.sleep(0.1)
 
     def _init_axes(self) -> None:
         axes = vtk.vtkAxesActor()
@@ -182,10 +182,10 @@ class VTKRender:
         actor.GetProperty().EdgeVisibilityOn()
         
         self.render.AddActor(actor)
-        time.sleep(0.3)
+        time.sleep(0.1)
         self.render_window.Render()
         
-        time.sleep(0.3)
+        time.sleep(0.1)
         actor.GetProperty().SetColor(colors.GetColor3d(vtk_color[color_0][color_1]))
         self.render_window.Render()
         
