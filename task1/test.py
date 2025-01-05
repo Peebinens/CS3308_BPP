@@ -39,9 +39,6 @@ def test(args):
         k_placement=args.env.k_placement,
         is_render=args.render
     )
-    # print('观测空间 = {}'.format(test_env.observation_space))
-    # print('动作空间 = {}'.format(test_env.action_space))
-    # print('动作数 = {}'.format(test_env.action_space.n))
 
     # network
     actor, critic = build_net(args, device)
@@ -92,9 +89,6 @@ if __name__ == '__main__':
     args = arguments.get_args()
     args.train.algo = args.train.algo.upper()
     args.train.step_per_collect = args.train.num_processes * args.train.num_steps  
-
-    if args.render:
-        args.test_episode = 1  # for visualization
     args.test_episode = 1
     args.seed = 80
     print(f"dimension: {args.env.container_size}")

@@ -4,7 +4,6 @@ from .container import Container
 import numpy as np
 import gymnasium as gym
 from gymnasium import spaces
-from .cutCreator import CuttingBoxCreator
 # from .mdCreator import MDlayerBoxCreator
 from .binCreator import RandomBoxCreator, LoadBoxCreator, BoxCreator, LoadOrderCreator, LoadDataCreator
 
@@ -47,12 +46,6 @@ class PackingEnv(gym.Env):
             if data_type == "random":
                 print(f"using items generated randomly")
                 self.box_creator = RandomBoxCreator(item_set)  
-            if data_type == "cut":
-                print(f"using items generated through cutting method")
-                low = list(item_set[0])
-                up = list(item_set[-1])
-                low.extend(up)
-                self.box_creator = CuttingBoxCreator(container_size, low, self.can_rotate)
             if data_type == "order":
                 # print(f"using excel items")
                 self.box_creator = LoadOrderCreator(item_set)

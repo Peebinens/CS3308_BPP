@@ -8,7 +8,7 @@ env:
   id: OnlinePack-v1            # env name OnlinePack-v1, PCT-v0
   scheme: EMS                  # the scheme of generating candidate map: heightmap, EP, FC
   rot: True
-  box_type: dataset           # random, cut
+  box_type: random          
   container_size: [100, 100, 100]
   step:       
   k_placement: 80              # number of candidate placements
