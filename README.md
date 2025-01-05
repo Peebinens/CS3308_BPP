@@ -1,5 +1,5 @@
 # CS3308-BPP
-<div align="center">
+<div >
 
 <img src='https://img.shields.io/badge/SJTU-CS3308-blue'></img> 
 <img src='https://img.shields.io/badge/BPP-ML-orange'></img>
