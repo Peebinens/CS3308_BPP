@@ -69,6 +69,24 @@ class LoadOrderCreator(BoxCreator):
             self.box_list.append((550, 550, 500))
             self.box_index += 1
 # load data
+class LoadDataCreator(BoxCreator):
+    def __init__(self, data_name=None):
+        super().__init__()
+        self.box_set = []
+        # dataset.txt:a b c d e f g, read the a b c to self.box_set
+        with open("dataset.txt", 'r') as f:
+            for line in f:
+                line = line.strip().split(' ')
+                self.box_set.append((int(line[0]), int(line[1]), int(line[2])))
+        self.index = 0
+
+    def generate_box_size(self, **kwargs):
+        if self.index < len(self.box_set):
+            self.box_list.append(self.box_set[self.index])
+            self.index += 1
+        else:
+            self.box_list.append((550, 550, 500))
+            self.index += 1
 
 class LoadCutCreator(BoxCreator):
     def __init__(self, data_name=None):

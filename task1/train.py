@@ -235,7 +235,6 @@ def train(args):
     buffer = VectorReplayBuffer(total_size=10000, buffer_num=len(train_envs))
     train_collector = PackCollector(policy, train_envs, buffer)
     test_collector = PackCollector(policy, test_envs)
-    
     # trainer
     result = onpolicy_trainer(
         policy,
@@ -254,7 +253,7 @@ def train(args):
         logger=logger,
         test_in_train=False
     )
-
+    print("#######################################")
     final_save_fn(policy)
     pprint.pprint(f'Finished training! \n{result}')
     watch(result)

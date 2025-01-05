@@ -39,10 +39,10 @@ def get_args():
 
     box_size_set = []
     
-    # for i in range(box_range[0], box_range[3] + 1, step):
-    #     for j in range(box_range[1], box_range[4] + 1, step):
-    #         for k in range(box_range[2], box_range[5] + 1, step):
-    #             box_size_set.append((i, j, k))
+    for i in range(box_range[0], box_range[3] + 1, step):
+        for j in range(box_range[1], box_range[4] + 1, step):
+            for k in range(box_range[2], box_range[5] + 1, step):
+                box_size_set.append((i, j, k))
     # box_size_set = [(4, 4, 4)]
     cfg.env.box_small = box_small
     cfg.env.box_big = box_big

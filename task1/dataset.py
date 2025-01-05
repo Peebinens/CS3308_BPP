@@ -33,7 +33,7 @@ def load_data(L, W, H):
         axis = random.choices(range(3), weights=pop_item[:3], k=1)[0]
         # split the item by the axis and rotate the two new items
         l = pop_item[axis]  
-        l1 = np.random.rand()*l
+        l1 = np.random.randint(1, l)
         l2 = l - l1
         split_1 = pop_item.copy()
         split_1[axis] = l1

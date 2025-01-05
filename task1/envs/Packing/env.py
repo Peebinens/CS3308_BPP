@@ -6,7 +6,7 @@ import gymnasium as gym
 from gymnasium import spaces
 from .cutCreator import CuttingBoxCreator
 # from .mdCreator import MDlayerBoxCreator
-from .binCreator import RandomBoxCreator, LoadBoxCreator, BoxCreator, LoadOrderCreator
+from .binCreator import RandomBoxCreator, LoadBoxCreator, BoxCreator, LoadOrderCreator, LoadDataCreator
 
 from render import VTKRender
 
@@ -56,6 +56,9 @@ class PackingEnv(gym.Env):
             if data_type == "order":
                 # print(f"using excel items")
                 self.box_creator = LoadOrderCreator(item_set)
+            if data_type == "dataset":
+                self.box_creator = LoadDataCreator(item_set)
+
             assert isinstance(self.box_creator, BoxCreator)
         if load_test_data:
             print(f"use box dataset: {data_name}")

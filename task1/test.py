@@ -95,7 +95,7 @@ if __name__ == '__main__':
 
     if args.render:
         args.test_episode = 1  # for visualization
-    args.test_episode = 100
+    args.test_episode = 1
     args.seed = 80
     print(f"dimension: {args.env.container_size}")
     test(args)
